@@ -1,0 +1,15 @@
+.grid{
+    width: 1700px;
+}
+.alineado{
+    display: flex;
+    gap: 1rem;
+}
+.poke-img{
+    width : 165px; 
+    height : 165px;
+}
+
+.layout-background{
+    background-color: aliceblue;
+}

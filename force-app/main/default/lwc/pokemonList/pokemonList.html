@@ -1,0 +1,51 @@
+<template>
+    <div class="slds-var-p-around_medium lgc-bg layout-background">
+        <lightning-input 
+            type="text" 
+            label="Escriba el nombre del pokemon" 
+            onchange={handlerInputChange}
+        ></lightning-input>
+        <div class="alineado">
+            <lightning-combobox
+                name="type"
+                label="Tipo nº1"
+                placeholder="Selecione un tipo"
+                value={value}
+                onchange={handleComboboxChange1}
+                options={typeOptions}
+            ></lightning-combobox>
+            <lightning-combobox
+                name="type"
+                label="Tipo nº2"
+                placeholder="Selecione un tipo"
+                value={value}
+                onchange={handleComboboxChange2}
+                options={typeOptions}
+            ></lightning-combobox>
+            <lightning-combobox
+                name="generation"
+                label="Generación"
+                placeholder="Selecione una generación"
+                value={value}
+                onchange={handleComboboxChange3}
+                options={generacionOptions}
+            ></lightning-combobox>
+            <lightning-layout>
+                <p class="slds-var-m-vertical_small slds-text-align_center"><b>Cantidad de Pokémons:</b><br>{numberOfPokemons}</br></p>
+            </lightning-layout>
+        </div>        
+    </div>
+    <div class="slds-align_absolute-center">
+        <div class="slds-grid slds-wrap slds-grid_align-spread grid">            
+            <template if:true={pokemons}>
+                <template for:each={pokemons} for:item="poke">
+                    <div key={poke.Name}>
+                        <c-pokemon-tile 
+                        pokemon={poke}
+                        class="slds-col slds-var-m-around_small"></c-pokemon-tile>
+                    </div>
+                </template>  
+            </template>
+        </div> 
+    </div>     
+</template>

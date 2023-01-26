@@ -1,0 +1,7 @@
+:host {
+    max-width: 325px;
+    display: block;
+}
+.poke-img{
+    height: 150px;
+}
