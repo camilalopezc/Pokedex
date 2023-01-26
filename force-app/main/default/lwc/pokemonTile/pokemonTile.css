@@ -5,3 +5,7 @@
 .poke-img{
     height: 150px;
 }
+.alineado{
+    display: flex;
+    gap: 1rem;
+}
