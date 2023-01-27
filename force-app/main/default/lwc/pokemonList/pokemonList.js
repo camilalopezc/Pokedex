@@ -7,8 +7,9 @@ export default class PokemonList extends LightningElement {
     searchType1 = '';
     searchType2 = '';
     numberOfPokemons;
-    pokemons = [];    
-
+    pokemons = [];
+    
+    //Método para traer pokemons al que le paso los parámetros obtenidos en los combobox e input.
     @wire(getPokemons, {nombre: '$searchText', generacion: '$searchGeneration', tipo1: '$searchType1', tipo2: '$searchType2' })    
 
     //Contador de pokemons
@@ -31,6 +32,7 @@ export default class PokemonList extends LightningElement {
         }
     }
 
+    //Setea los valores de las combobox de tipo
    typeOptions = [
             
             { 
@@ -111,6 +113,7 @@ export default class PokemonList extends LightningElement {
             },
     ];
 
+    //Setea los valores de la combobox de generaciones
     generacionOptions = [
             
         { 
